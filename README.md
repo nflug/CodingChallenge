@@ -21,5 +21,5 @@ Für die Lösung des Problems, der optimalen Verteilung der Hardware, habe ich m
  Für die Fahrt an den Bonner Standort stehen Dir 2 Transporter zur Verfügung. Entwickle einen Algorithmus, um die beiden Transporter optimal für die erste (einmalige) Fahrt zu beladen. Beachte hierbei die Ladekapazität der Transporter sowie die unterschiedlichen Gewichte der Hardware und den Bedarf am Standort Bonn. Ergebnis soll eine optimale Ladeliste sein. 
 
 # Vorschau
-![Preview](https://chemicalmonkeys.de/Preview.png)
 ![Preview2](https://chemicalmonkeys.de/Preview2.png)
+![Preview](https://chemicalmonkeys.de/Preview.png)
