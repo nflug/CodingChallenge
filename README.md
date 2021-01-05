@@ -5,9 +5,12 @@
  Die Releases (also .EXE Datei als Programm zum Ausführen) sind hier zu finden: https://github.com/nflug/CodingChallenge/releases
 
 # Bedienung
- 1. CodingChallenge.exe starten (eventuell mit Administrationsrechten & deaktiviertem Antivirus (Aufgrud von NuGet-Packages wird dieses manchmal getriggert)).
+ 1. Die neuste Version auf der Releases-Seite herunterladen und entpacken.
+ 2. CodingChallenge.exe starten (eventuell mit Administrationsrechten & deaktiviertem Antivirus-Programm (Aufgrund von NuGet-Packages wird dieses manchmal getriggert)).
  2. JSON Datei auswählen (oben rechts), welche die Daten für Hardware und Transporter enthält (befindet sich im Release-Ordner).
  3. Die Daten sind nun geladen und können in der Tabelle eingesehen werden.
+ 
+ Sollte es Probleme geben, einfach per E-Mail anschreiben oder auf GITHub ein Issue erstellen.
 
 # Begründung & Erklärung
 Für die Lösung des Problems, der optimalen Verteilung der Hardware, habe ich mich für den Ansatz des `Rucksackproblems` (engl. Knapsack Problem, https://de.wikipedia.org/wiki/Rucksackproblem) entschieden, da dieses passend auf die Aufgabe zutrifft, ein Raum mit bestimmter Größe soll optimal mit passenden Elementen von bestimmter Größe gefüllt werden. Hier bei wird der sogenannte `Greedy-Algorithmus` angewandt (https://de.wikipedia.org/wiki/Greedy-Algorithmus). Diesen habe ich benutzt um, wie auf Wikipedia beschrieben, `das beste Ergebnis` zu erreichen. Kurz erklärt, der Algorithmus versucht durch eine `Bewertungsfunktion`, schnellst möglich und optimal das beste Ergebnis zu erzielen.
