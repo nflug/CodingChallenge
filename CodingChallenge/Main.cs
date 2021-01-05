@@ -2,6 +2,7 @@
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Windows.Forms;
@@ -76,11 +77,14 @@ namespace CodingChallenge
                     sumWeight += h.GetRealWeight();
                 });
 
-                _ = DataDisplay.Rows.Add("", "", "", ToKG(sumWeight) + " / " + ToKG(GetTruckMaxWeight(t)));
+                int row = DataDisplay.Rows.Add("Transporter Gewicht:", ToKG(sumWeight), "von", ToKG(GetTruckMaxWeight(t)), "belegt");
+                DataDisplay.Rows[row].DefaultCellStyle.Font = new Font("Arial", 10F, FontStyle.Bold);
                 _ = DataDisplay.Rows.Add("", "", "", "");
             });
 
             int leftSumWeight = 0;
+            int leftSumAmount = 0;
+
             _hardware.ForEach(h =>
             {
                 Hardware originalH = _hardwareOriginal.Find(hF => hF.Name == h.Name);
@@ -94,9 +98,11 @@ namespace CodingChallenge
                 );
 
                 leftSumWeight += h.GetRealWeight();
+                leftSumAmount += h.Amount;
             });
 
-            _ = DataDisplay.Rows.Add("", "", "", ToKG(leftSumWeight));
+            int rowEnd = DataDisplay.Rows.Add("", "Insgesamt übrig:", leftSumAmount.ToString() + " Stk.", ToKG(leftSumWeight));
+            DataDisplay.Rows[rowEnd].DefaultCellStyle.Font = new Font("Arial", 10F, FontStyle.Bold);
         }
 
 
@@ -125,7 +131,8 @@ namespace CodingChallenge
 
 
         /// <summary>
-        ///     Starts to run the "Greedy Algorithm" with "Knapsack Problem" method
+        ///     Starts to run the "Greedy Algorithm" with "Knapsack Problem" method & 
+        ///     three trires "Fractional Knapsack Problem" method
         /// </summary>
         /// <exception cref="Exception">
         ///     Shows an exception in the console if the algorithm doesn't work
@@ -165,23 +172,35 @@ namespace CodingChallenge
                         addToFinal.Add(h);
                     });
 
-                    int filled = addToFinal.Sum(h => h.GetRealWeight());
-                    if (filled <= truckRealMaxWeight)
+                    int filled, tried = 0;
+                    while ((filled = addToFinal.Sum(h => h.GetRealWeight())) <= truckRealMaxWeight)
                     {
                         RunFractionalKnapsackMethod(truckRealMaxWeight - filled, _hardware).ForEach(h =>
                         {
-                            int index = _hardware.FindIndex(hf => hf.Name == h.Name);
-                            if (_hardware[index].Amount != h.Amount)
+                            if (h.Amount != 0)
                             {
-                                _hardware[index].Amount = _hardware[index].Amount - h.Amount;
-                            }
-                            else
-                            {
-                                _hardware.RemoveAt(index);
-                            }
+                                int index = _hardware.FindIndex(hf => hf.Name == h.Name);
+                                if (_hardware[index].Amount != h.Amount)
+                                {
+                                    _hardware[index].Amount = _hardware[index].Amount - h.Amount;
+                                }
+                                else
+                                {
+                                    _hardware.RemoveAt(index);
+                                }
 
-                            addToFinal.Add(h);
+                                addToFinal.Add(h);
+                            }
                         });
+
+                        _ = _hardware.OrderBy(h => h.Weight);
+
+                        if (tried > 10)
+                        {
+                            break;
+                        }
+
+                        tried++;
                     }
 
                     _hardwareFinal.Add(new KeyValuePair<int, List<Hardware>>(current, addToFinal));
@@ -311,10 +330,14 @@ namespace CodingChallenge
                 {
                     int remain = W - curWeight;
                     float amount = oldH.Amount * ((float)remain / oldH.GetRealWeight());
-                    finalvalue += amount;
+                    int newWeight = (int)amount * oldH.Weight; 
 
-                    hardware.Add(CopyHardware(oldH, (int)amount));
-                    break;
+                    if (curWeight + newWeight <= W)
+                    {
+                        finalvalue += amount;
+                        curWeight += newWeight;
+                        hardware.Add(CopyHardware(oldH, (int)amount));
+                    }
                 }
             }
 

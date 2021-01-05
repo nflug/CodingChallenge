@@ -29,25 +29,26 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
             this.MainForm = new Bunifu.Framework.UI.BunifuElipse(this.components);
-            this.GrandientPanel = new Bunifu.Framework.UI.BunifuGradientPanel();
-            this.DataDisplay = new Bunifu.UI.WinForms.BunifuDataGridView();
             this.DragControl = new Bunifu.Framework.UI.BunifuDragControl(this.components);
             this.DragControlHeader = new Bunifu.Framework.UI.BunifuDragControl(this.components);
-            this.Logo_BWI = new System.Windows.Forms.PictureBox();
-            this.Logo_getinit = new System.Windows.Forms.PictureBox();
-            this.CloseButton = new Bunifu.Framework.UI.BunifuTileButton();
-            this.SelectJSONButton = new Bunifu.Framework.UI.BunifuFlatButton();
             this.Title = new Bunifu.UI.WinForms.BunifuLabel();
             this.Info = new Bunifu.UI.WinForms.BunifuLabel();
-            this.GrandientPanel.SuspendLayout();
+            this.DataDisplay = new Bunifu.UI.WinForms.BunifuDataGridView();
+            this.GrandientPanel = new Bunifu.Framework.UI.BunifuGradientPanel();
+            this.CloseButton = new Bunifu.UI.WinForms.BunifuPictureBox();
+            this.SelectJSONButton = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.Logo_getinit = new System.Windows.Forms.PictureBox();
+            this.Logo_BWI = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.DataDisplay)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Logo_BWI)).BeginInit();
+            this.GrandientPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.CloseButton)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Logo_getinit)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Logo_BWI)).BeginInit();
             this.SuspendLayout();
             // 
             // MainForm
@@ -55,26 +56,49 @@
             this.MainForm.ElipseRadius = 50;
             this.MainForm.TargetControl = this;
             // 
-            // GrandientPanel
+            // DragControl
             // 
-            this.GrandientPanel.BackColor = System.Drawing.Color.Transparent;
-            this.GrandientPanel.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("GrandientPanel.BackgroundImage")));
-            this.GrandientPanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.GrandientPanel.Controls.Add(this.DataDisplay);
-            this.GrandientPanel.Controls.Add(this.SelectJSONButton);
-            this.GrandientPanel.Controls.Add(this.Logo_getinit);
-            this.GrandientPanel.Controls.Add(this.Logo_BWI);
-            this.GrandientPanel.Controls.Add(this.CloseButton);
-            this.GrandientPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.GrandientPanel.GradientBottomLeft = System.Drawing.Color.Firebrick;
-            this.GrandientPanel.GradientBottomRight = System.Drawing.Color.DarkRed;
-            this.GrandientPanel.GradientTopLeft = System.Drawing.Color.Brown;
-            this.GrandientPanel.GradientTopRight = System.Drawing.Color.IndianRed;
-            this.GrandientPanel.Location = new System.Drawing.Point(0, 0);
-            this.GrandientPanel.Name = "GrandientPanel";
-            this.GrandientPanel.Quality = 10;
-            this.GrandientPanel.Size = new System.Drawing.Size(800, 450);
-            this.GrandientPanel.TabIndex = 3;
+            this.DragControl.Fixed = true;
+            this.DragControl.Horizontal = true;
+            this.DragControl.TargetControl = this.GrandientPanel;
+            this.DragControl.Vertical = true;
+            // 
+            // DragControlHeader
+            // 
+            this.DragControlHeader.Fixed = true;
+            this.DragControlHeader.Horizontal = true;
+            this.DragControlHeader.TargetControl = null;
+            this.DragControlHeader.Vertical = true;
+            // 
+            // Title
+            // 
+            this.Title.AutoEllipsis = false;
+            this.Title.CursorType = null;
+            this.Title.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Title.ForeColor = System.Drawing.Color.White;
+            this.Title.Location = new System.Drawing.Point(579, 49);
+            this.Title.Name = "Title";
+            this.Title.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.Title.Size = new System.Drawing.Size(196, 31);
+            this.Title.TabIndex = 0;
+            this.Title.Text = "Coding Challange";
+            this.Title.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
+            this.Title.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            // 
+            // Info
+            // 
+            this.Info.AutoEllipsis = false;
+            this.Info.CursorType = null;
+            this.Info.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Info.ForeColor = System.Drawing.Color.White;
+            this.Info.Location = new System.Drawing.Point(611, 86);
+            this.Info.Name = "Info";
+            this.Info.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.Info.Size = new System.Drawing.Size(139, 15);
+            this.Info.TabIndex = 3;
+            this.Info.Text = "Coded by Patrick Deschauer";
+            this.Info.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
+            this.Info.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
             // 
             // DataDisplay
             // 
@@ -143,59 +167,41 @@
             this.DataDisplay.Theme = Bunifu.UI.WinForms.BunifuDataGridView.PresetThemes.Maroon;
             this.DataDisplay.SelectionChanged += new System.EventHandler(this.DataDisplay_SelectionChanged);
             // 
-            // DragControl
+            // GrandientPanel
             // 
-            this.DragControl.Fixed = true;
-            this.DragControl.Horizontal = true;
-            this.DragControl.TargetControl = this.GrandientPanel;
-            this.DragControl.Vertical = true;
-            // 
-            // DragControlHeader
-            // 
-            this.DragControlHeader.Fixed = true;
-            this.DragControlHeader.Horizontal = true;
-            this.DragControlHeader.Vertical = true;
-            // 
-            // Logo_BWI
-            // 
-            this.Logo_BWI.BackColor = System.Drawing.Color.Transparent;
-            this.Logo_BWI.Image = global::CodingChallenge.Properties.Resources.BWI_logo;
-            this.Logo_BWI.Location = new System.Drawing.Point(21, 14);
-            this.Logo_BWI.Name = "Logo_BWI";
-            this.Logo_BWI.Size = new System.Drawing.Size(127, 92);
-            this.Logo_BWI.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.Logo_BWI.TabIndex = 1;
-            this.Logo_BWI.TabStop = false;
-            // 
-            // Logo_getinit
-            // 
-            this.Logo_getinit.BackColor = System.Drawing.Color.Transparent;
-            this.Logo_getinit.Image = global::CodingChallenge.Properties.Resources.getinit_logo;
-            this.Logo_getinit.Location = new System.Drawing.Point(169, 14);
-            this.Logo_getinit.Name = "Logo_getinit";
-            this.Logo_getinit.Size = new System.Drawing.Size(132, 92);
-            this.Logo_getinit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.Logo_getinit.TabIndex = 2;
-            this.Logo_getinit.TabStop = false;
+            this.GrandientPanel.BackColor = System.Drawing.Color.Transparent;
+            this.GrandientPanel.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("GrandientPanel.BackgroundImage")));
+            this.GrandientPanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.GrandientPanel.Controls.Add(this.CloseButton);
+            this.GrandientPanel.Controls.Add(this.SelectJSONButton);
+            this.GrandientPanel.Controls.Add(this.Logo_getinit);
+            this.GrandientPanel.Controls.Add(this.Logo_BWI);
+            this.GrandientPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.GrandientPanel.GradientBottomLeft = System.Drawing.Color.Firebrick;
+            this.GrandientPanel.GradientBottomRight = System.Drawing.Color.DarkRed;
+            this.GrandientPanel.GradientTopLeft = System.Drawing.Color.Brown;
+            this.GrandientPanel.GradientTopRight = System.Drawing.Color.IndianRed;
+            this.GrandientPanel.Location = new System.Drawing.Point(0, 0);
+            this.GrandientPanel.Name = "GrandientPanel";
+            this.GrandientPanel.Quality = 10;
+            this.GrandientPanel.Size = new System.Drawing.Size(800, 450);
+            this.GrandientPanel.TabIndex = 3;
             // 
             // CloseButton
             // 
-            this.CloseButton.BackColor = System.Drawing.Color.Maroon;
-            this.CloseButton.color = System.Drawing.Color.Maroon;
-            this.CloseButton.colorActive = System.Drawing.Color.DarkRed;
-            this.CloseButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.CloseButton.Font = new System.Drawing.Font("Century Gothic", 15.75F);
-            this.CloseButton.ForeColor = System.Drawing.Color.White;
+            this.CloseButton.AllowFocused = false;
+            this.CloseButton.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.CloseButton.BackColor = System.Drawing.Color.Transparent;
+            this.CloseButton.BorderRadius = 100;
             this.CloseButton.Image = ((System.Drawing.Image)(resources.GetObject("CloseButton.Image")));
-            this.CloseButton.ImagePosition = 20;
-            this.CloseButton.ImageZoom = 50;
-            this.CloseButton.LabelPosition = 41;
-            this.CloseButton.LabelText = "";
-            this.CloseButton.Location = new System.Drawing.Point(748, 14);
-            this.CloseButton.Margin = new System.Windows.Forms.Padding(6);
+            this.CloseButton.IsCircle = false;
+            this.CloseButton.Location = new System.Drawing.Point(752, 15);
             this.CloseButton.Name = "CloseButton";
-            this.CloseButton.Size = new System.Drawing.Size(27, 26);
-            this.CloseButton.TabIndex = 3;
+            this.CloseButton.Size = new System.Drawing.Size(23, 23);
+            this.CloseButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.CloseButton.TabIndex = 4;
+            this.CloseButton.TabStop = false;
+            this.CloseButton.Type = Bunifu.UI.WinForms.BunifuPictureBox.Types.Square;
             this.CloseButton.Click += new System.EventHandler(this.CloseButton_Click);
             // 
             // SelectJSONButton
@@ -235,35 +241,27 @@
             this.SelectJSONButton.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SelectJSONButton.Click += new System.EventHandler(this.SelectJSON_Click);
             // 
-            // Title
+            // Logo_getinit
             // 
-            this.Title.AutoEllipsis = false;
-            this.Title.CursorType = null;
-            this.Title.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Title.ForeColor = System.Drawing.Color.White;
-            this.Title.Location = new System.Drawing.Point(579, 49);
-            this.Title.Name = "Title";
-            this.Title.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.Title.Size = new System.Drawing.Size(196, 31);
-            this.Title.TabIndex = 0;
-            this.Title.Text = "Coding Challange";
-            this.Title.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
-            this.Title.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            this.Logo_getinit.BackColor = System.Drawing.Color.Transparent;
+            this.Logo_getinit.Image = global::CodingChallenge.Properties.Resources.getinit_logo;
+            this.Logo_getinit.Location = new System.Drawing.Point(169, 14);
+            this.Logo_getinit.Name = "Logo_getinit";
+            this.Logo_getinit.Size = new System.Drawing.Size(132, 92);
+            this.Logo_getinit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.Logo_getinit.TabIndex = 2;
+            this.Logo_getinit.TabStop = false;
             // 
-            // Info
+            // Logo_BWI
             // 
-            this.Info.AutoEllipsis = false;
-            this.Info.CursorType = null;
-            this.Info.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Info.ForeColor = System.Drawing.Color.White;
-            this.Info.Location = new System.Drawing.Point(611, 86);
-            this.Info.Name = "Info";
-            this.Info.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.Info.Size = new System.Drawing.Size(139, 15);
-            this.Info.TabIndex = 3;
-            this.Info.Text = "Coded by Patrick Deschauer";
-            this.Info.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
-            this.Info.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            this.Logo_BWI.BackColor = System.Drawing.Color.Transparent;
+            this.Logo_BWI.Image = global::CodingChallenge.Properties.Resources.BWI_logo;
+            this.Logo_BWI.Location = new System.Drawing.Point(21, 14);
+            this.Logo_BWI.Name = "Logo_BWI";
+            this.Logo_BWI.Size = new System.Drawing.Size(127, 92);
+            this.Logo_BWI.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.Logo_BWI.TabIndex = 1;
+            this.Logo_BWI.TabStop = false;
             // 
             // Main
             // 
@@ -271,15 +269,17 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Maroon;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.DataDisplay);
             this.Controls.Add(this.GrandientPanel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Main";
             this.Text = "Form1";
-            this.GrandientPanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.DataDisplay)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Logo_BWI)).EndInit();
+            this.GrandientPanel.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.CloseButton)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Logo_getinit)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Logo_BWI)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -293,9 +293,9 @@
         private Bunifu.Framework.UI.BunifuFlatButton SelectJSONButton;
         private System.Windows.Forms.PictureBox Logo_getinit;
         private System.Windows.Forms.PictureBox Logo_BWI;
-        private Bunifu.Framework.UI.BunifuTileButton CloseButton;
         private Bunifu.UI.WinForms.BunifuLabel Title;
         private Bunifu.UI.WinForms.BunifuLabel Info;
+        private Bunifu.UI.WinForms.BunifuPictureBox CloseButton;
     }
 }
 
