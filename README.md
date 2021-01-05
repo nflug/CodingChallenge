@@ -5,7 +5,7 @@
  Die Releases (also .EXE Datei als Programm zum Ausführen) sind hier zu finden: https://github.com/nflug/CodingChallenge/releases
 
 # Bedienung
- 1. Die neuste Version auf der Releases-Seite herunterladen und entpacken.
+ 1. Die neuste Version auf der Releases-Seite herunterladen und entpacken. (https://github.com/nflug/CodingChallenge/releases/tag/1.0.0)
  2. CodingChallenge.exe starten (eventuell mit Administrationsrechten & deaktiviertem Antivirus-Programm (Aufgrund von NuGet-Packages wird dieses manchmal getriggert)).
  2. JSON Datei auswählen (oben rechts), welche die Daten für Hardware und Transporter enthält (befindet sich im Release-Ordner).
  3. Die Daten sind nun geladen und können in der Tabelle eingesehen werden.
