@@ -1,6 +1,6 @@
 ﻿using Newtonsoft.Json;
 
-namespace CodingChallange.classes
+namespace CodingChallenge.classes
 {
     public class Hardware
     {

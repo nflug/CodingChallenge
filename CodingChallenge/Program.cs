@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 
-namespace CodingChallange
+namespace CodingChallenge
 {
     static class Program
     {

@@ -1,4 +1,4 @@
-﻿namespace CodingChallange
+﻿namespace CodingChallenge
 {
     partial class Main
     {
@@ -159,7 +159,7 @@
             // Logo_BWI
             // 
             this.Logo_BWI.BackColor = System.Drawing.Color.Transparent;
-            this.Logo_BWI.Image = global::CodingChallange.Properties.Resources.BWI_logo;
+            this.Logo_BWI.Image = global::CodingChallenge.Properties.Resources.BWI_logo;
             this.Logo_BWI.Location = new System.Drawing.Point(21, 14);
             this.Logo_BWI.Name = "Logo_BWI";
             this.Logo_BWI.Size = new System.Drawing.Size(127, 92);
@@ -170,7 +170,7 @@
             // Logo_getinit
             // 
             this.Logo_getinit.BackColor = System.Drawing.Color.Transparent;
-            this.Logo_getinit.Image = global::CodingChallange.Properties.Resources.getinit_logo;
+            this.Logo_getinit.Image = global::CodingChallenge.Properties.Resources.getinit_logo;
             this.Logo_getinit.Location = new System.Drawing.Point(169, 14);
             this.Logo_getinit.Name = "Logo_getinit";
             this.Logo_getinit.Size = new System.Drawing.Size(132, 92);

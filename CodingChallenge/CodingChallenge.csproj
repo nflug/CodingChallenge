@@ -7,8 +7,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{85CF5E9F-89FA-4E14-8879-BB2215C8DB2F}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>CodingChallange</RootNamespace>
-    <AssemblyName>CodingChallange</AssemblyName>
+    <RootNamespace>CodingChallenge</RootNamespace>
+    <AssemblyName>CodingChallenge</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>

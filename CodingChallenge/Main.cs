@@ -1,4 +1,4 @@
-﻿using CodingChallange.classes;
+﻿using CodingChallenge.classes;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Windows.Forms;
 
-namespace CodingChallange
+namespace CodingChallenge
 {
 
     public partial class Main : Form
