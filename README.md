@@ -22,3 +22,4 @@ Für die Lösung des Problems, der optimalen Verteilung der Hardware, habe ich m
 
 # Vorschau
 ![Preview](https://chemicalmonkeys.de/Preview.png)
+![Preview2](https://chemicalmonkeys.de/Preview2.png)
