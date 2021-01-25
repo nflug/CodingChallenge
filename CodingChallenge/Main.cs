@@ -132,12 +132,12 @@ namespace CodingChallenge
 
         /// <summary>
         ///     Starts to run the "Greedy Algorithm" with "Knapsack Problem" method & 
-        ///     three trires "Fractional Knapsack Problem" method
+        ///     ten tries "Fractional Knapsack Problem" method
         /// </summary>
         /// <exception cref="Exception">
         ///     Shows an exception in the console if the algorithm doesn't work
         /// </exception>
-        private void RunAlgorithmus()
+        private void RunAlgorithm()
         {
             try
             {
@@ -388,7 +388,7 @@ namespace CodingChallenge
                 _hardware = _root.Hardware;
                 _trucks = _root.Trucks;
 
-                RunAlgorithmus();
+                RunAlgorithm();
             }
             catch (Exception ex)
             {

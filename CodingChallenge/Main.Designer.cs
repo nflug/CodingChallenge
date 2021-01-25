@@ -152,7 +152,6 @@
             this.DataDisplay.EnableHeadersVisualStyles = false;
             this.DataDisplay.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(178)))), ((int)(((byte)(178)))));
             this.DataDisplay.HeaderBackColor = System.Drawing.Color.Maroon;
-            this.DataDisplay.HeaderBgColor = System.Drawing.Color.Empty;
             this.DataDisplay.HeaderForeColor = System.Drawing.Color.White;
             this.DataDisplay.Location = new System.Drawing.Point(21, 136);
             this.DataDisplay.MultiSelect = false;
